@@ -1,3 +1,5 @@
+package FizzBuzzUnitTest;
+
 /*
  * Universidad Catolica Boliviana (San Pablo).
  */
@@ -5,12 +7,15 @@
 import com.mycompany.fizzbuzz.FizzBuzz;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 /**
  * {@link FizzBuzzTest} for testing {@link FizzBuzz}
  *
  * @author Diego Orland Mejia Salazar
  */
+@RunWith(JUnit4.class)
 public class FizzBuzzTest {
 
     /**
