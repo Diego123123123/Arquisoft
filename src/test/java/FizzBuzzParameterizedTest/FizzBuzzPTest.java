@@ -63,19 +63,19 @@ public class FizzBuzzPTest {
     /**
      * Input number that is going to be evalated.
      */
-    private Integer input;
+    private final Integer input;
 
     /**
      * Expected result.
      */
-    private String expected;
+    private final String expected;
 
     /**
      * Constructor method.
      * @param input number to evaluate
      * @param expected result.
      */
-    public FizzBuzzPTest(Integer input, String expected) {
+    public FizzBuzzPTest(final Integer input, final String expected) {
         this.input = input;
         this.expected = expected;
     }

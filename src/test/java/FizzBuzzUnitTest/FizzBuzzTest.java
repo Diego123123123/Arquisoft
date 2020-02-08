@@ -5,8 +5,8 @@ package FizzBuzzUnitTest;
  */
 
 import com.mycompany.fizzbuzz.FizzBuzz;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -50,17 +50,17 @@ public class FizzBuzzTest {
     @Test
     public void testWithNumberOne() {
         String expected = FizzBuzz.calculate(ONE);
-        Assertions.assertEquals("1", expected);
+        assertEquals("1", expected);
     }
 
-    /**
+   /**
      * Test method that checks if a number(2) that does not fullfil the rules in
      * the FizzBuzzDictionary should return the same number.
      */
     @Test
     public void testWithNumber2() {
         String expected = FizzBuzz.calculate(TWO);
-        Assertions.assertEquals("2", expected);
+        assertEquals("2", expected);
     }
 
     /**
@@ -70,7 +70,7 @@ public class FizzBuzzTest {
     @Test
     public void testWithNumber3() {
         String expected = FizzBuzz.calculate(THREE);
-        Assertions.assertEquals("Fizz", expected);
+        assertEquals("Fizz", expected);
     }
 
     /**
@@ -80,7 +80,7 @@ public class FizzBuzzTest {
     @Test
     public void testWithNumber5() {
         String expected = FizzBuzz.calculate(FIVE);
-        Assertions.assertEquals("Buzz", expected);
+        assertEquals("Buzz", expected);
     }
     
     /**
@@ -90,6 +90,6 @@ public class FizzBuzzTest {
     @Test
     public void testWithNumber15() {
         String expected = FizzBuzz.calculate(FIFTEENTH);
-        Assertions.assertEquals("FizzBuzz", expected);
+        assertEquals("FizzBuzz", expected);
     }
 }

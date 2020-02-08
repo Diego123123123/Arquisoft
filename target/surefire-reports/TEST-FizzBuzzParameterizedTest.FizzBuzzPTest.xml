@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="30" failures="0" name="FizzBuzzParameterizedTest.FizzBuzzPTest" time="0.012" errors="0" skipped="0">
+<testsuite tests="30" failures="0" name="FizzBuzzParameterizedTest.FizzBuzzPTest" time="0.014" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="10.0.1+10"/>
@@ -64,7 +64,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[0]" time="0.008"/>
+  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[0]" time="0.01"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[1]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[2]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[3]" time="0"/>
@@ -78,19 +78,19 @@
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[11]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[12]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[13]" time="0"/>
-  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[14]" time="0.001"/>
+  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[14]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[15]" time="0.001"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[16]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[17]" time="0"/>
-  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[18]" time="0.002"/>
+  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[18]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[19]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[20]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[21]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[22]" time="0"/>
-  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[23]" time="0"/>
+  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[23]" time="0.001"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[24]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[25]" time="0"/>
-  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[26]" time="0"/>
+  <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[26]" time="0.002"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[27]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[28]" time="0"/>
   <testcase classname="FizzBuzzParameterizedTest.FizzBuzzPTest" name="test[29]" time="0"/>
