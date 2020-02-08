@@ -13,7 +13,7 @@ import org.junit.runners.JUnit4;
 /**
  * {@link FizzBuzzTest} for testing {@link FizzBuzz}
  *
- * @author Diego Orland Mejia Salazar
+ * @author Diego Orlando Mejia Salazar
  */
 @RunWith(JUnit4.class)
 public class FizzBuzzTest {
@@ -24,7 +24,7 @@ public class FizzBuzzTest {
     public final Integer ONE = 1;
 
     /**
-     * Numer two.
+     * Number two.
      */
     public final Integer TWO = 2;
 
