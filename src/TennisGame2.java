@@ -46,8 +46,6 @@ public class TennisGame2 implements TennisGame
                 P1res="Forty";
             if (P2point==1)
                 P2res="Fifteen";
-            if (P2point==2)
-                P2res="Thirty";
             score = P1res + "-" + P2res;
         }
         if (P2point>P1point && P2point < 4)
@@ -58,12 +56,16 @@ public class TennisGame2 implements TennisGame
                 P2res="Forty";
             if (P1point==1)
                 P1res="Fifteen";
-            if (P1point==2)
-                P1res="Thirty";
             score = P1res + "-" + P2res;
         }
         
-        if (P1point > P2point && P2point >= 3)
+        score = getPlayerWithAdvantage(score);
+        score = getWinner(score);
+        return score;
+    }
+
+	private String getPlayerWithAdvantage(String score) {
+		if (P1point > P2point && P2point >= 3)
         {
             score = "Advantage player1";
         }
@@ -72,8 +74,11 @@ public class TennisGame2 implements TennisGame
         {
             score = "Advantage player2";
         }
-        
-        if (P1point>=4 && P2point>=0 && (P1point-P2point)>=2)
+		return score;
+	}
+
+	private String getWinner(String score) {
+		if (P1point>=4 && P2point>=0 && (P1point-P2point)>=2)
         {
             score = "Win for player1";
         }
@@ -81,17 +86,12 @@ public class TennisGame2 implements TennisGame
         {
             score = "Win for player2";
         }
-        return score;
-    }
+		return score;
+	}
 
 	private String p2Love() {
 		String score;
-		if (P2point==1)
-		    P2res = "Fifteen";
-		if (P2point==2)
-		    P2res = "Thirty";
-		if (P2point==3)
-		    P2res = "Forty";
+		P2res = getResult(P2point);
 		
 		P1res = "Love";
 		score = P1res + "-" + P2res;
@@ -100,18 +100,25 @@ public class TennisGame2 implements TennisGame
 
 	private String p1Love() {
 		String score;
-		if (P1point==1)
-		    P1res = "Fifteen";
-		if (P1point==2)
-		    P1res = "Thirty";
-		if (P1point==3)
-		    P1res = "Forty";
+		P1res = getResult(P1point);
 		
 		P2res = "Love";
 		score = P1res + "-" + P2res;
 		return score;
 	}
     
+	private String getResult(final int points) {
+		switch (points) {
+		case 1:
+			return "Fifteen"; 
+		case 2:
+			return "Thirty";
+		case 3:
+			return "Forty";
+		}
+		return null;
+	}
+	
     public void SetP1Score(int number){
         
         for (int i = 0; i < number; i++)
