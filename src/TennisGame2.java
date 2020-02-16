@@ -16,12 +16,12 @@ public class TennisGame2 implements TennisGame
 
     public String getScore(){
         String score = "";
-        if (P1point == P2point && P1point < 4)
+        if (P1point == P2point && P1point < 3)
         {
         	score = getResult(P1point);
             score += "-All";
         }
-        if (P1point==P2point && P1point>=3)
+        if (P1point==P2point && P1point > 2)
             score = "Deuce";
         
         if (P1point > 0 && P2point==0)
@@ -79,8 +79,7 @@ public class TennisGame2 implements TennisGame
 	private String p2Love() {
 		String score;
 		P2res = getResult(P2point);
-		
-		P1res = "Love";
+		P1res = getResult(P1point);
 		score = P1res + "-" + P2res;
 		return score;
 	}
