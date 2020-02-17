@@ -1,3 +1,4 @@
+import java.lang.Math;
 
 public class TennisGame2 implements TennisGame {
 	public int P1point = 0;
@@ -15,62 +16,13 @@ public class TennisGame2 implements TennisGame {
 
 	public String getScore() {
 		String score = "";
+		setPlayersResult();
 		if (P1point == P2point && P1point < 3) {
 			return getResult(P1point) + "-All";
 		}
 		if (P1point == P2point && P1point > 2)
 			return "Deuce";
-
-		if ((P1point + P2point) == 0 ) {
-			score = loveScore();
-		}
-
-		if (P1point > P2point && P1point < 4) {
-			setPlayersResult();
-			score = P1res + "-" + P2res;
-		}
-		if (P2point > P1point && P2point < 4) {
-			setPlayersResult();
-			score = P1res + "-" + P2res;
-		}
-
-		score = getPlayerWithAdvantage(score);
-		score = getWinner(score);
-		return score;
-	}
-
-	private String getPlayerWithAdvantage(String score) {
-		if (P1point > P2point && P2point > 2) {
-			score = "Advantage player1";
-		}
-
-		if (P2point > P1point && P1point > 2) {
-			score = "Advantage player2";
-		}
-		return score;
-	}
-
-	private String getWinner(String score) {
-		if (P1point > 3 && (P1point - P2point) > 1) {
-			score = "Win for player1";
-		}
-		if (P2point > 3 && (P2point - P1point) > 1) {
-			score = "Win for player2";
-		}
-		return score;
-	}
-
-	private String loveScore() {
-		P2res = getResult(P2point);
-		P1res = getResult(P1point);
-		return P1res + "-" + P2res;
-	}
-
-	private String p1Love() {
-		String score;
-		P1res = getResult(P1point);
-		P2res = getResult(P2point);
-		score = P1res + "-" + P2res;
+		score = getPlayersScore();
 		return score;
 	}
 
@@ -89,11 +41,9 @@ public class TennisGame2 implements TennisGame {
 	}
 
 	public void SetP1Score(int number) {
-
 		for (int i = 0; i < number; i++) {
 			P1Score();
 		}
-
 	}
 
 	public void SetP2Score(int number) {
@@ -103,8 +53,23 @@ public class TennisGame2 implements TennisGame {
 		}
 
 	}
-	
-	public void setPlayersResult() {
+
+	private String getPlayersScore() {
+		if (P1point > 3 || P2point > 3) {
+			if (Math.abs(P1point - P2point) > 1) {
+				return getWinner();
+			}
+			return getPlayerWithAdvantage();
+		}
+		if (P1point > 2 || P2point > 2) {
+			if (P1point == P2point) {
+				return "Deuce";
+			}
+		}
+		return P1res + "-" + P2res;
+	}
+
+	private void setPlayersResult() {
 		P1res = getResult(P1point);
 		P2res = getResult(P2point);
 	}
@@ -118,9 +83,28 @@ public class TennisGame2 implements TennisGame {
 	}
 
 	public void wonPoint(String player) {
-		if (player == "player1")
+		if (player == player1Name)
 			P1Score();
 		else
 			P2Score();
 	}
+
+	private String getPlayerNameWithMorePoints() {
+		if (P1point > P2point) {
+			return player1Name;
+		}
+		if (P2point > P1point) {
+			return player2Name;
+		}
+		return null;
+	}
+
+	private String getWinner() {
+		return "Win for " + getPlayerNameWithMorePoints();
+	}
+
+	private String getPlayerWithAdvantage() {
+		return "Advantage " + getPlayerNameWithMorePoints();
+	}
+
 }
