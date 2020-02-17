@@ -11,22 +11,22 @@ public class TennisGame2 implements TennisGame {
 	/**
 	 * Amount of points for getting a love score.
 	 */
-	public final static int LOVE = 0;
+	public static final int LOVE = 0;
 
 	/**
 	 * Amount of points for getting fifteen score.
 	 */
-	public final static int FIFTEEN = 1;
+	public static final int FIFTEEN = 1;
 
 	/**
 	 * Amount of points for getting thirty score.
 	 */
-	public final static int THIRTY = 2;
+	public static final int THIRTY = 2;
 
 	/**
 	 * Amount of points for getting forty score.
 	 */
-	public final static int FORTY = 3;
+	public static final int FORTY = 3;
 
 	/**
 	 * Player 1 points
