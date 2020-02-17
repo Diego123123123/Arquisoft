@@ -1,7 +1,7 @@
 import java.lang.Math;
 
 /**
- * Univesidad Catolica Boliviana "San Pablo"
+ * Universidad Catolica Boliviana "San Pablo".
  * 
  * @author Diego Orlando Mejia Salazar
  *
