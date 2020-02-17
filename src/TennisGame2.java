@@ -59,7 +59,9 @@ public class TennisGame2 implements TennisGame {
 			if (Math.abs(P1point - P2point) > 1) {
 				return getWinner();
 			}
-			return getPlayerWithAdvantage();
+			if (Math.abs(P1point - P2point) == 1) {
+				return getPlayerWithAdvantage();			
+			}
 		}
 		if (P1point > 2 || P2point > 2) {
 			if (P1point == P2point) {
