@@ -72,10 +72,10 @@ public class TennisGame2 implements TennisGame {
 	 */
 	public String getScore() {
 		setPlayersResult();
-		if (P1point == P2point && P1point < 3) {
+		if (P1point == P2point && P1point < FORTY) {
 			return getResult(P1point) + "-All";
 		}
-		if (P1point == P2point && P1point > 2)
+		if (P1point == P2point && P1point > THIRTY)
 			return "Deuce";
 		return getPlayersScore();
 	}
@@ -125,15 +125,15 @@ public class TennisGame2 implements TennisGame {
 	 * @return the current score.
 	 */
 	private String getPlayersScore() {
-		if (P1point > 3 || P2point > 3) {
-			if (Math.abs(P1point - P2point) > 1) {
+		if (P1point > FORTY || P2point > FORTY) {
+			if (Math.abs(P1point - P2point) > FIFTEEN) {
 				return getWinner();
 			}
-			if (Math.abs(P1point - P2point) == 1) {
+			if (Math.abs(P1point - P2point) == FIFTEEN) {
 				return getPlayerWithAdvantage();
 			}
 		}
-		if (P1point > 2 || P2point > 2) {
+		if (P1point > THIRTY || P2point > THIRTY) {
 			if (P1point == P2point) {
 				return "Deuce";
 			}
