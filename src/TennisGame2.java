@@ -21,21 +21,16 @@ public class TennisGame2 implements TennisGame {
 		if (P1point == P2point && P1point > 2)
 			return "Deuce";
 
-		if (P2point == 0) {
-			score = p1Love();
-		}
-		if (P1point == 0) {
-			score = p2Love();
+		if ((P1point + P2point) == 0 ) {
+			score = loveScore();
 		}
 
 		if (P1point > P2point && P1point < 4) {
-			P1res = getResult(P1point);
-			P2res = getResult(P2point);
+			setPlayersResult();
 			score = P1res + "-" + P2res;
 		}
 		if (P2point > P1point && P2point < 4) {
-			P2res = getResult(P2point);
-			P1res = getResult(P1point);
+			setPlayersResult();
 			score = P1res + "-" + P2res;
 		}
 
@@ -65,12 +60,10 @@ public class TennisGame2 implements TennisGame {
 		return score;
 	}
 
-	private String p2Love() {
-		String score;
+	private String loveScore() {
 		P2res = getResult(P2point);
 		P1res = getResult(P1point);
-		score = P1res + "-" + P2res;
-		return score;
+		return P1res + "-" + P2res;
 	}
 
 	private String p1Love() {
@@ -109,6 +102,11 @@ public class TennisGame2 implements TennisGame {
 			P2Score();
 		}
 
+	}
+	
+	public void setPlayersResult() {
+		P1res = getResult(P1point);
+		P2res = getResult(P2point);
 	}
 
 	public void P1Score() {
