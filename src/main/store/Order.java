@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import store.discount.DiscountFactory;
+import store.discount.IDiscountable;
+
 public class Order {
 
 	private Customer customer;
@@ -54,36 +57,15 @@ public class Order {
 
 	public float total() {
 		float totalItems = 0;
+		DiscountFactory discountFactory = new DiscountFactory();
 		for (OrderItem item : items) {
-			float totalItem=0;
-			float itemAmount = item.getTotalAmountToPay();
-			if (item.getProduct().getCategory() == ProductCategory.Accessories) {
-				float booksDiscount = 0;
-				if (itemAmount >= 100) {
-					booksDiscount = itemAmount * 10 / 100;
-				}
-				totalItem = itemAmount - booksDiscount;
-			}
-			if (item.getProduct().getCategory() == ProductCategory.Bikes) {
-				// 20% discount for Bikes
-				totalItem = itemAmount - itemAmount * 20 / 100;
-			}
-			if (item.getProduct().getCategory() == ProductCategory.Cloathing) {
-				float cloathingDiscount = 0;
-				if (item.getQuantity() > 2) {
-					cloathingDiscount = item.getProduct().getUnitPrice();
-				}
-				totalItem = itemAmount - cloathingDiscount;
-			}
-			totalItems += totalItem;
+			IDiscountable discount = discountFactory.getDiscountStrategy(item);
+			totalItems += discount.applyDiscount();
 		}
 
 		if (this.deliveryCountry == "USA"){
-			// total=totalItems + tax + 0 shipping
 			return totalItems + totalItems * 5 / 100;
 		}
-
-		// total=totalItemst + tax + 15 shipping
 		return totalItems + totalItems * 5 / 100 + 15;
 	}
 }
